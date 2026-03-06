@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pluma Noturna</title>
+    <description>Histórias relaxantes para acalmar a mente e embalar o sono. Narradas com carinho para ajudar você a dormir.</description>
+    <language>pt-BR</language>
+    <link>https://www.plumanoturna.com.br</link>
+    <atom:link href="https://www.plumanoturna.com.br/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <itunes:author>Pluma Noturna</itunes:author>
+    <itunes:owner>
+      <itunes:name>Pluma Noturna</itunes:name>
+      <itunes:email>plumanoturna@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://www.plumanoturna.com.br/logo.png"/>
+    <itunes:category text="Fiction">
+      <itunes:category text="Drama"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>O Som que Nasceu do Silêncio</title>
+      <description><![CDATA[Uma história relaxante. Permita-se envolver pela história de Arthur.]]></description>
+      <enclosure url="https://archive.org/download/plumanoturna-podcast/20260306_o-som-que-nasceu-do-silêncio.mp3" length="42088950" type="audio/mpeg"/>
+      <guid isPermaLink="false">f211b741e7b9</guid>
+      <pubDate>Fri, 06 Mar 2026 13:16:23 GMT</pubDate>
+      <itunes:duration>00:43:50</itunes:duration>
+      <itunes:image href="https://archive.org/download/plumanoturna-podcast/20260306_o-som-que-nasceu-do-silêncio_thumb.png"/>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
