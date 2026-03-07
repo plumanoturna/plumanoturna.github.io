@@ -18,6 +18,15 @@
       <itunes:category text="Drama"/>
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
-
+    <item>
+      <title>O Jardineiro que Deu Voz ao Vento | História Relaxante</title>
+      <description><![CDATA[Mergulhe na calma história de Arthur, um jardineiro que sentia a falta de uma canção em seu jardim perfeito.]]></description>
+      <enclosure url="https://archive.org/download/plumanoturna-podcast/20260307_o-jardineiro-que-deu-voz-ao-vento-historia-relaxante.mp3" length="57601088" type="audio/mpeg"/>
+      <guid isPermaLink="false">b677faf8584f</guid>
+      <pubDate>Sat, 07 Mar 2026 02:39:21 GMT</pubDate>
+      <itunes:duration>01:00:00</itunes:duration>
+      <itunes:image href="https://www.plumanoturna.com.br/podcast-cover.png"/>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
   </channel>
 </rss>
