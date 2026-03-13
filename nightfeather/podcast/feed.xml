@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Night Feather Stories</title>
+    <description>Relaxing bedtime stories to calm your mind and help you drift to sleep. Narrated with care for peaceful nights.</description>
+    <language>en</language>
+    <link>https://www.plumanoturna.com.br/nightfeather</link>
+    <atom:link href="https://www.plumanoturna.com.br/nightfeather/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <itunes:author>Night Feather Stories</itunes:author>
+    <itunes:owner>
+      <itunes:name>Night Feather Stories</itunes:name>
+      <itunes:email>plumanoturna@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://www.plumanoturna.com.br/nightfeather/podcast-cover.png"/>
+    <itunes:category text="Fiction">
+      <itunes:category text="Drama"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+
+  </channel>
+</rss>
