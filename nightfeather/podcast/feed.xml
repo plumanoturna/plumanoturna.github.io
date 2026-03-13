@@ -18,6 +18,15 @@
       <itunes:category text="Drama"/>
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
-
+    <item>
+      <title>The Clock Forgotten in the Attic for Decades</title>
+      <description><![CDATA[A relaxing story set in a calm and peaceful atmosphere. Tonight you'll hear: The Clock Forgotten in the Attic for Decades. New relaxing stories every week.]]></description>
+      <enclosure url="https://archive.org/download/nightfeather-podcast/20260313_the-clock-forgotten-in-the-attic-for-decades.mp3" length="36375448" type="audio/mpeg"/>
+      <guid isPermaLink="false">41b0a2857dec</guid>
+      <pubDate>Fri, 13 Mar 2026 22:17:11 GMT</pubDate>
+      <itunes:duration>00:37:53</itunes:duration>
+      <itunes:image href="https://www.plumanoturna.com.br/nightfeather/podcast-cover.png"/>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
   </channel>
 </rss>
