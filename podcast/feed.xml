@@ -7,6 +7,7 @@
     <description>Histórias relaxantes para acalmar a mente e embalar o sono. Narradas com carinho para ajudar você a dormir.</description>
     <language>pt-BR</language>
     <link>https://www.plumanoturna.com.br</link>
+    <managingEditor>plumanoturna@gmail.com (Pluma Noturna)</managingEditor>
     <atom:link href="https://www.plumanoturna.com.br/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Pluma Noturna</itunes:author>
     <itunes:owner>
@@ -18,6 +19,16 @@
       <itunes:category text="Drama"/>
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>O Envelope Selado que Esperou por Décadas | História Relaxante</title>
+      <description><![CDATA[Uma história relaxante ambientada em um cenário tranquilo e natural. Hoje você ouvirá: O Envelope Selado que Esperou por Décadas]]></description>
+      <enclosure url="https://archive.org/download/plumanoturna-podcast/20260313_o-envelope-selado-que-esperou-por-decadas-historia-relaxante.mp3" length="44757621" type="audio/mpeg"/>
+      <guid isPermaLink="false">44ffce9954b3</guid>
+      <pubDate>Fri, 13 Mar 2026 23:02:20 GMT</pubDate>
+      <itunes:duration>00:46:37</itunes:duration>
+      <itunes:image href="https://archive.org/download/plumanoturna-podcast/20260313_o-envelope-selado-que-esperou-por-decadas-historia-relaxante_thumb.png"/>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
     <item>
       <title>A Carta Nunca Entregue: Um Plano Esquecido | História Relaxante</title>
       <description><![CDATA[Uma história relaxante ambientada em um cenário tranquilo e natural.<br/><br/>Hoje você ouvirá: A Carta Nunca Entregue: Um Plano Esquecido<br/><br/>Permita-se um mergulho em uma descoberta silenciosa: a velha caixa de madeira, a poeira do sótão e um envelope amarelado guardando um plano simples. Acompanhe a jornada de um legado resgatado, onde cada toque na madeira, cada dobra do papel, revela a calma de um projeto esquecido e a beleza de uma promessa que finalmente encontra seu caminho.<br/><br/>00:00 Início<br/>00:40 História<br/>40:00 Transição suave<br/>50:00 Música ambiente<br/><br/>Novas histórias relaxantes todas as semanas.<br/><br/>Se você aprecia narrativas calmas e atmosferas tranquilas, inscreva-se para acompanhar os próximos contos.<br/><br/>#historiasrelaxantes #historianarrada #plumanoturna #CartasAntigas #ProjetosManuais #LegadoFamiliar]]></description>
