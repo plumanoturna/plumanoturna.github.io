@@ -20,6 +20,16 @@
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
     <item>
+      <title>A Caixa de Música Que Quebrou o Silêncio</title>
+      <description><![CDATA[Uma história relaxante para dormir e desacelerar a mente. Hoje você ouvirá: A Caixa de Música Que Quebrou o Silêncio.]]></description>
+      <enclosure url="https://archive.org/download/plumanoturna-podcast/20260316_a-caixa-de-musica-que-quebrou-o-silencio.mp3" length="32945258" type="audio/mpeg"/>
+      <guid isPermaLink="false">2483c70f2a31</guid>
+      <pubDate>Mon, 16 Mar 2026 23:02:48 GMT</pubDate>
+      <itunes:duration>00:34:19</itunes:duration>
+      <itunes:image href="https://archive.org/download/plumanoturna-podcast/20260316_a-caixa-de-musica-que-quebrou-o-silencio_thumb.png"/>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+    <item>
       <title>O Envelope Selado que Esperou por Décadas | História Relaxante</title>
       <description><![CDATA[Uma história relaxante ambientada em um cenário tranquilo e natural. Hoje você ouvirá: O Envelope Selado que Esperou por Décadas]]></description>
       <enclosure url="https://archive.org/download/plumanoturna-podcast/20260313_o-envelope-selado-que-esperou-por-decadas-historia-relaxante.mp3" length="44757621" type="audio/mpeg"/>
