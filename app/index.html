@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pluma Noturna - Content Distribution Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
+            background: #0a0a14;
+            color: #e8e6e3;
+            min-height: 100vh;
+            padding: 2rem;
+            line-height: 1.8;
+        }
+        .container { max-width: 800px; margin: 0 auto; }
+        .back { display: inline-block; margin-bottom: 2rem; color: #777; font-size: 0.9rem; text-decoration: none; font-weight: 700; }
+        .back:hover { color: #aaa; }
+        .header { text-align: center; margin-bottom: 3rem; }
+        .logo { width: 200px; height: auto; margin-bottom: 1rem; }
+        h1 { font-size: 1.8rem; font-weight: 700; color: #fffdd0; margin-bottom: 0.5rem; }
+        .subtitle { color: #a8a4a0; font-size: 1rem; font-weight: 400; }
+        h2 { font-size: 1.3rem; font-weight: 700; color: #fffdd0; margin-top: 2.5rem; margin-bottom: 1rem; }
+        p, li { color: #a8a4a0; margin-bottom: 1rem; font-weight: 400; }
+        ul { padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        li { margin-bottom: 0.5rem; }
+        .features { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 2rem 0; }
+        .feature { border: 1px solid #1a1a2e; border-radius: 12px; padding: 1.5rem; }
+        .feature h3 { color: #fffdd0; font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .feature p { font-size: 0.9rem; margin-bottom: 0; }
+        .platforms { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1.5rem 0; }
+        .platform { display: flex; align-items: center; gap: 0.5rem; border: 1px solid #333; border-radius: 8px; padding: 0.5rem 1rem; color: #fffdd0; font-weight: 700; font-size: 0.85rem; }
+        .platform svg { width: 18px; height: 18px; fill: #fffdd0; flex-shrink: 0; }
+        .how-it-works { counter-reset: step; }
+        .step { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
+        .step-num { background: #1a1a2e; color: #fffdd0; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0; font-size: 0.9rem; }
+        .step-content h3 { color: #e8e6e3; font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .step-content p { font-size: 0.9rem; margin-bottom: 0; }
+        .channels { margin: 2rem 0; }
+        .channel { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; padding: 1rem; border: 1px solid #1a1a2e; border-radius: 10px; }
+        .channel-logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
+        .channel-info h3 { color: #fffdd0; font-size: 0.95rem; font-weight: 700; }
+        .channel-info p { color: #777; font-size: 0.85rem; margin-bottom: 0; }
+        a { color: #fffdd0; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        footer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #1a1a2e; text-align: center; }
+        footer p { font-size: 0.8rem; color: #555; }
+        footer a { color: #777; }
+        @media (max-width: 600px) {
+            .features { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/" class="back">&larr; Back to Home</a>
+
+        <div class="header">
+            <img src="../logo.png" alt="Pluma Noturna" class="logo">
+            <h1>Content Distribution Platform</h1>
+            <p class="subtitle">Automated multi-platform publishing for relaxation content</p>
+        </div>
+
+        <h2>What is Pluma Noturna?</h2>
+        <p>Pluma Noturna is a content distribution platform specialized in relaxation and sleep media. It automates the publishing workflow across multiple social media platforms, delivering bedtime stories, ambient videos, and calming audio content to audiences worldwide.</p>
+        <p>The platform manages two channels &mdash; <strong>Pluma Noturna</strong> (Portuguese) and <strong>Night Feather Stories</strong> (English) &mdash; distributing content to millions of viewers seeking relaxation and better sleep.</p>
+
+        <h2>Supported Platforms</h2>
+        <div class="platforms">
+            <div class="platform">
+                <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                YouTube
+            </div>
+            <div class="platform">
+                <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+                TikTok
+            </div>
+            <div class="platform">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                Instagram
+            </div>
+            <div class="platform">
+                <svg viewBox="0 0 24 24"><path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.162-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738a.36.36 0 0 1 .083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24 12.017 24 18.635 24 24 18.633 24 12.013 24 5.393 18.635.028 12.017.028z"/></svg>
+                Pinterest
+            </div>
+            <div class="platform">
+                <svg viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+                Spotify
+            </div>
+        </div>
+
+        <h2>How It Works</h2>
+        <div class="how-it-works">
+            <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <h3>Content Creation</h3>
+                    <p>Original relaxation stories are produced with professional narration, ambient soundscapes, and calming visuals. Each story includes a full-length video, promotional clips, thumbnail artwork, and a podcast audio version.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <h3>Multi-Platform Publishing</h3>
+                    <p>The platform authenticates with each social media service via OAuth2 and publishes content using official APIs. Videos are uploaded to YouTube and TikTok, images and reels to Instagram and Pinterest, and audio episodes to Spotify via RSS.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <h3>Scheduling &amp; Distribution</h3>
+                    <p>Content is scheduled for optimal delivery times across all platforms. Full videos, short clips, thumbnails, and podcast episodes are distributed on a coordinated schedule to maximize audience reach.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                    <h3>Audience Engagement</h3>
+                    <p>Viewers and listeners access relaxation content on their preferred platform. The platform ensures consistent content availability across YouTube, TikTok, Instagram, Pinterest, and Spotify.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Channels</h2>
+        <div class="channels">
+            <div class="channel">
+                <img src="../logo.png" alt="Pluma Noturna" class="channel-logo">
+                <div class="channel-info">
+                    <h3>Pluma Noturna</h3>
+                    <p>Portuguese &mdash; Relaxing bedtime stories for Brazilian audiences</p>
+                </div>
+            </div>
+            <div class="channel">
+                <img src="../nightfeather/logo.png" alt="Night Feather Stories" class="channel-logo">
+                <div class="channel-info">
+                    <h3>Night Feather Stories</h3>
+                    <p>English &mdash; Sleep stories for global audiences</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>TikTok Integration</h2>
+        <p>Pluma Noturna uses the TikTok Content Posting API to publish relaxation videos directly to TikTok. The integration includes:</p>
+        <ul>
+            <li><strong>OAuth2 Authentication</strong> &mdash; Secure login via TikTok Login Kit</li>
+            <li><strong>Direct Posting</strong> &mdash; Videos uploaded via Content Posting API (video.publish, video.upload)</li>
+            <li><strong>Scheduled Publishing</strong> &mdash; Content distributed at coordinated times across all platforms</li>
+            <li><strong>Multi-Channel Support</strong> &mdash; Both Pluma Noturna (PT) and Night Feather Stories (EN) channels</li>
+        </ul>
+
+        <h2>Contact</h2>
+        <p>For questions about the platform: <a href="mailto:plumanoturna@gmail.com">plumanoturna@gmail.com</a></p>
+
+        <footer>
+            <p>
+                <a href="/privacy-policy">Privacy Policy</a> &middot;
+                <a href="/terms-of-service">Terms of Service</a> &middot;
+                <a href="/">Pluma Noturna</a> &middot;
+                <a href="/nightfeather/">Night Feather Stories</a>
+            </p>
+            <p>&copy; 2026 Pluma Noturna. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
