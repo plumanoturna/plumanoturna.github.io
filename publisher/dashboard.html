@@ -53,83 +53,40 @@
         <img src="/publisher/logo.png" alt="Publisher" class="logo">
         <h1>Publisher Dashboard</h1>
 
-        <!-- State: Connecting -->
-        <div id="state-connecting" class="state-connecting">
-            <p class="status"><span class="spinner"></span> Connecting to local dashboard...</p>
+        <div class="card" style="text-align: center; border-color: var(--accent);">
+            <h2 style="margin-bottom: 1rem;">Open Your Dashboard</h2>
+            <a href="http://localhost:8000" class="btn btn-primary" style="font-size: 1rem; padding: 0.9rem 2.5rem;">Go to Dashboard</a>
+            <p style="margin-top: 1rem; font-size: 0.8rem; color: #a8a4a0;">Opens <code>localhost:8000</code> — make sure the server is running.</p>
         </div>
 
-        <!-- State: Offline -->
-        <div id="state-offline" class="state-offline">
-            <p class="status">Dashboard is not running on this machine.</p>
-
-            <div class="card">
-                <h2>Already have Publisher installed?</h2>
-                <p>Start the dashboard by running this command in your terminal:</p>
-                <p><code>python -m publisher web</code></p>
-                <p>Then <a href="#" onclick="tryConnect(); return false;" style="color: #fffdd0;">click here to retry</a>.</p>
-            </div>
-
-            <div class="card">
-                <h2>New to Publisher?</h2>
-                <p>Publisher is a multi-channel content distribution platform that publishes videos, shorts, and audio across YouTube, TikTok, Instagram, Pinterest, and Spotify.</p>
-                <p><strong>Requirements:</strong></p>
-                <ul>
-                    <li>Python 3.11 or higher</li>
-                    <li>API credentials for target platforms</li>
-                    <li>OAuth2 app registration</li>
-                </ul>
-                <p>Contact us for deployment assistance and onboarding:</p>
-            </div>
-
-            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
-                <a href="mailto:plumanoturna@gmail.com" class="btn btn-primary">Contact Us</a>
-                <a href="/publisher/" class="btn btn-secondary">Learn More</a>
-            </div>
-
-            <p style="margin-top: 1rem; font-size: 0.75rem; color: #555;">plumanoturna@gmail.com</p>
+        <div class="card">
+            <h2>How to start the dashboard</h2>
+            <p>Run this command in your terminal:</p>
+            <p><code>python -m publisher web</code></p>
+            <p>The dashboard will be available at <code>http://localhost:8000</code></p>
         </div>
+
+        <div class="card">
+            <h2>New to Publisher?</h2>
+            <p>Publisher is a multi-channel content distribution platform that publishes videos, shorts, and audio across YouTube, TikTok, Instagram, Pinterest, and Spotify.</p>
+            <p><strong>Requirements:</strong></p>
+            <ul>
+                <li>Python 3.11 or higher</li>
+                <li>API credentials for target platforms</li>
+                <li>OAuth2 app registration</li>
+            </ul>
+            <p>Contact us for deployment assistance and onboarding:</p>
+        </div>
+
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+            <a href="mailto:plumanoturna@gmail.com" class="btn btn-primary">Contact Us</a>
+            <a href="/publisher/" class="btn btn-secondary">Learn More</a>
+        </div>
+
+        <p style="margin-top: 1rem; font-size: 0.75rem; color: #555;">plumanoturna@gmail.com</p>
 
         <a href="/publisher/" class="back-link">&larr; Back to Publisher</a>
     </div>
 
-    <script>
-        var DASHBOARD_URL = 'http://localhost:8000';
-
-        function tryConnect() {
-            document.getElementById('state-connecting').style.display = 'block';
-            document.getElementById('state-offline').style.display = 'none';
-
-            fetch(DASHBOARD_URL + '/api/jobs', { mode: 'no-cors', cache: 'no-cache' })
-                .then(function() {
-                    // If fetch doesn't throw, server is likely up
-                    // Redirect after small delay to confirm
-                    setTimeout(function() {
-                        window.location.href = DASHBOARD_URL;
-                    }, 500);
-                })
-                .catch(function() {
-                    // no-cors fetch to different origin always resolves with opaque response
-                    // So we need a different approach: try loading an image or use a timeout
-                    showOffline();
-                });
-
-            // Fallback: try opening in a hidden iframe
-            var img = new Image();
-            img.onload = function() { window.location.href = DASHBOARD_URL; };
-            img.onerror = function() {
-                // Wait a bit then show offline
-                setTimeout(showOffline, 2000);
-            };
-            img.src = DASHBOARD_URL + '/static/img/logo.png?t=' + Date.now();
-        }
-
-        function showOffline() {
-            document.getElementById('state-connecting').style.display = 'none';
-            document.getElementById('state-offline').style.display = 'block';
-        }
-
-        // Auto-try on page load
-        tryConnect();
-    </script>
 </body>
 </html>
