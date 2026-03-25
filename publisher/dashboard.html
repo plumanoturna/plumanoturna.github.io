@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publisher Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #0a0a14;
+            color: #e8e6e3;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .container { max-width: 540px; text-align: center; }
+        .logo { width: 80px; height: auto; margin-bottom: 1.5rem; }
+        h1 { font-size: 1.5rem; font-weight: 700; color: #fffdd0; margin-bottom: 0.5rem; }
+        .status { font-size: 1rem; color: #a8a4a0; margin-bottom: 2rem; font-weight: 400; }
+        .spinner { display: inline-block; width: 24px; height: 24px; border: 3px solid #1a1a2e; border-top-color: #fffdd0; border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Shown when connected */
+        .state-connecting { display: block; }
+        .state-offline { display: none; }
+
+        .card { background: #111122; border: 1px solid #1a1a2e; border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem; text-align: left; }
+        .card h2 { font-size: 1rem; font-weight: 700; color: #fffdd0; margin-bottom: 0.8rem; }
+        .card p { color: #a8a4a0; font-size: 0.85rem; font-weight: 400; margin-bottom: 0.8rem; line-height: 1.6; }
+        .card code { background: #0a0a14; padding: 3px 8px; border-radius: 4px; color: #fffdd0; font-size: 0.8rem; }
+        .card ul { color: #a8a4a0; font-size: 0.85rem; font-weight: 400; padding-left: 1.2rem; margin-bottom: 0.8rem; }
+        .card li { margin-bottom: 0.4rem; }
+
+        .btn { display: inline-block; padding: 0.7rem 2rem; border-radius: 25px; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 700; text-decoration: none; cursor: pointer; border: none; transition: all 0.3s; }
+        .btn-primary { background: #fffdd0; color: #0a0a14; }
+        .btn-primary:hover { background: #fff; text-decoration: none; }
+        .btn-secondary { background: transparent; color: #fffdd0; border: 1px solid #fffdd0; }
+        .btn-secondary:hover { background: rgba(255, 253, 208, 0.1); text-decoration: none; }
+
+        .contact-link { color: #fffdd0; font-size: 0.85rem; }
+        .back-link { display: block; margin-top: 2rem; font-size: 0.8rem; color: #555; text-decoration: none; }
+        .back-link:hover { color: #777; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="/publisher/logo.png" alt="Publisher" class="logo">
+        <h1>Publisher Dashboard</h1>
+
+        <!-- State: Connecting -->
+        <div id="state-connecting" class="state-connecting">
+            <p class="status"><span class="spinner"></span> Connecting to local dashboard...</p>
+        </div>
+
+        <!-- State: Offline -->
+        <div id="state-offline" class="state-offline">
+            <p class="status">Dashboard is not running on this machine.</p>
+
+            <div class="card">
+                <h2>Already have Publisher installed?</h2>
+                <p>Start the dashboard by running this command in your terminal:</p>
+                <p><code>python -m publisher web</code></p>
+                <p>Then <a href="#" onclick="tryConnect(); return false;" style="color: #fffdd0;">click here to retry</a>.</p>
+            </div>
+
+            <div class="card">
+                <h2>New to Publisher?</h2>
+                <p>Publisher is a multi-channel content distribution platform that publishes videos, shorts, and audio across YouTube, TikTok, Instagram, Pinterest, and Spotify.</p>
+                <p><strong>Requirements:</strong></p>
+                <ul>
+                    <li>Python 3.11 or higher</li>
+                    <li>API credentials for target platforms</li>
+                    <li>OAuth2 app registration</li>
+                </ul>
+                <p>Contact us for deployment assistance and onboarding:</p>
+            </div>
+
+            <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:plumanoturna@gmail.com" class="btn btn-primary">Contact Us</a>
+                <a href="/publisher/" class="btn btn-secondary">Learn More</a>
+            </div>
+
+            <p style="margin-top: 1rem; font-size: 0.75rem; color: #555;">plumanoturna@gmail.com</p>
+        </div>
+
+        <a href="/publisher/" class="back-link">&larr; Back to Publisher</a>
+    </div>
+
+    <script>
+        var DASHBOARD_URL = 'http://localhost:8000';
+
+        function tryConnect() {
+            document.getElementById('state-connecting').style.display = 'block';
+            document.getElementById('state-offline').style.display = 'none';
+
+            fetch(DASHBOARD_URL + '/api/jobs', { mode: 'no-cors', cache: 'no-cache' })
+                .then(function() {
+                    // If fetch doesn't throw, server is likely up
+                    // Redirect after small delay to confirm
+                    setTimeout(function() {
+                        window.location.href = DASHBOARD_URL;
+                    }, 500);
+                })
+                .catch(function() {
+                    // no-cors fetch to different origin always resolves with opaque response
+                    // So we need a different approach: try loading an image or use a timeout
+                    showOffline();
+                });
+
+            // Fallback: try opening in a hidden iframe
+            var img = new Image();
+            img.onload = function() { window.location.href = DASHBOARD_URL; };
+            img.onerror = function() {
+                // Wait a bit then show offline
+                setTimeout(showOffline, 2000);
+            };
+            img.src = DASHBOARD_URL + '/static/img/logo.png?t=' + Date.now();
+        }
+
+        function showOffline() {
+            document.getElementById('state-connecting').style.display = 'none';
+            document.getElementById('state-offline').style.display = 'block';
+        }
+
+        // Auto-try on page load
+        tryConnect();
+    </script>
+</body>
+</html>
