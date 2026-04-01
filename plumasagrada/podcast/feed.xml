@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pluma Sagrada</title>
+    <description>Mistérios e personagens esquecidos da Bíblia. Investigações em formato de documentário narrado.</description>
+    <language>pt-BR</language>
+    <link>https://www.plumanoturna.com.br/plumasagrada</link>
+    <managingEditor>plumanoturna@gmail.com (Pluma Sagrada)</managingEditor>
+    <atom:link href="https://www.plumanoturna.com.br/plumasagrada/podcast/feed.xml" rel="self" type="application/rss+xml"/>
+    <itunes:author>Pluma Sagrada</itunes:author>
+    <itunes:owner>
+      <itunes:name>Pluma Sagrada</itunes:name>
+      <itunes:email>plumanoturna@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:image href="https://www.plumanoturna.com.br/plumasagrada/podcast-cover.png"/>
+    <itunes:category text="Religion &amp; Spirituality">
+      <itunes:category text="Christianity"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+  </channel>
+</rss>
