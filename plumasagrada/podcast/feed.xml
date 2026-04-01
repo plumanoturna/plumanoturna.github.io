@@ -15,9 +15,19 @@
       <itunes:email>plumanoturna@gmail.com</itunes:email>
     </itunes:owner>
     <itunes:image href="https://www.plumanoturna.com.br/plumasagrada/podcast-cover.png"/>
-    <itunes:category text="Religion &amp; Spirituality">
+    <itunes:category text="Religion & Spirituality">
       <itunes:category text="Christianity"/>
     </itunes:category>
     <itunes:explicit>false</itunes:explicit>
+    <item>
+      <title>A origem oculta da Páscoa — de ritual judaico a tradição cristã</title>
+      <description><![CDATA[Mistérios Bíblicos | Pluma Sagrada]]></description>
+      <enclosure url="https://archive.org/download/plumasagrada-podcast/20260401_a-origem-oculta-da-pascoa-de-ritual-judaico-a-tradicao-crist.mp3" length="13531053" type="audio/mpeg"/>
+      <guid isPermaLink="false">bc634cfb3046</guid>
+      <pubDate>Wed, 01 Apr 2026 03:18:22 GMT</pubDate>
+      <itunes:duration>00:14:05</itunes:duration>
+      <itunes:image href="https://www.plumanoturna.com.br/plumasagrada/podcast-cover.png"/>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
   </channel>
 </rss>
