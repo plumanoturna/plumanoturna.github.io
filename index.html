@@ -112,13 +112,14 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Montserrat', 'Segoe UI', system-ui, sans-serif;
             font-weight: 700;
             background: #0a0a14;
+            background: radial-gradient(ellipse at top, #1a1030 0%, #0a0a14 55%);
             color: #e8e6e3;
             min-height: 100vh;
             display: flex;
@@ -150,14 +151,13 @@
             font-weight: 700;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            border: 1px solid #333;
+            border: 1px solid #3a3548;
             border-radius: 20px;
             padding: 0.4rem 0.9rem;
             transition: all 0.3s;
         }
         .lang-switch:hover {
-            color: #fffdd0;
-            border-color: #fffdd0;
+            color: #F5B942; border-color: #F5B942;
             background: rgba(255, 253, 208, 0.05);
         }
         .lang-switch svg {
@@ -171,11 +171,11 @@
             color: #fffdd0;
             margin-bottom: 0.6rem;
             letter-spacing: 0.02em;
-            text-shadow: 1px 1px 6px rgba(88, 28, 135, 0.6);
+            padding-bottom: 0.35rem; border-bottom: 2px solid #F5B942; display: inline-block;
         }
         .tagline {
             font-size: 1.05rem;
-            font-weight: 700;
+            font-weight: 400;
             color: #a8a4a0;
             margin-bottom: 2rem;
             line-height: 1.6;
@@ -201,7 +201,7 @@
             align-items: center;
             gap: 0.85rem;
             padding: 0.85rem 1rem;
-            border: 1px solid #333;
+            border: 1px solid #3a3548;
             border-radius: 10px;
             text-decoration: none;
             color: inherit;
@@ -209,7 +209,7 @@
             background: rgba(255, 253, 208, 0.02);
         }
         .channel-card:hover {
-            border-color: #fffdd0;
+            border-color: #F5B942; box-shadow: 0 4px 16px rgba(245,185,66,0.12);
             background: rgba(255, 253, 208, 0.06);
             transform: translateY(-1px);
         }
@@ -230,7 +230,7 @@
         }
         .channel-card .ch-desc {
             font-size: 0.75rem;
-            font-weight: 500;
+            font-weight: 400;
             color: #a8a4a0;
             line-height: 1.4;
         }
@@ -245,7 +245,7 @@
             color: #fffdd0;
             text-decoration: none;
             padding: 0.65rem 1.2rem;
-            border: 1px solid #333;
+            border: 1px solid #3a3548;
             border-radius: 8px;
             transition: all 0.3s;
             font-size: 0.85rem;
@@ -255,7 +255,7 @@
             gap: 0.5rem;
         }
         .links a:hover {
-            border-color: #fffdd0;
+            border-color: #F5B942;
             background: rgba(255, 253, 208, 0.05);
         }
         .links a svg {
@@ -278,7 +278,7 @@
             color: #a8a4a0;
             text-decoration: none;
             padding: 0.5rem 1.2rem;
-            border: 1px solid #333;
+            border: 1px solid #3a3548;
             border-radius: 20px;
             font-size: 0.72rem;
             font-weight: 700;
@@ -288,7 +288,7 @@
         }
         .publisher-link:hover {
             color: #fffdd0;
-            border-color: #fffdd0;
+            border-color: #F5B942; color: #F5B942;
         }
         .partnerships {
             margin-top: 2rem;
@@ -307,7 +307,7 @@
         }
         .partnerships button {
             background: transparent;
-            border: 1px solid #333;
+            border: 1px solid #3a3548;
             color: #a8a4a0;
             padding: 2px 8px;
             border-radius: 4px;
