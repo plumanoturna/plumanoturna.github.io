@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/nightfeather/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plumanoturna.com.br/"/>
+  </url>
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/nightfeather/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/nightfeather/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.plumanoturna.com.br/"/>
+  </url>
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/plumasagrada/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/plumasagrada/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/sacredfeather/"/>
+  </url>
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/sacredfeather/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/plumasagrada/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/sacredfeather/"/>
+  </url>
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/plumaabissal/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/plumaabissal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/abyssalplume/"/>
+  </url>
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/abyssalplume/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/plumaabissal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/abyssalplume/"/>
+  </url>
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/plumaestelar/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/plumaestelar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/stellarfeather/"/>
+  </url>
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/stellarfeather/</loc>
+    <lastmod>2026-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/plumaestelar/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/stellarfeather/"/>
+  </url>
+
+  <url>
+    <loc>https://www.plumanoturna.com.br/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.plumanoturna.com.br/terms-of-service</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.plumanoturna.com.br/nightfeather/privacy-policy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.plumanoturna.com.br/nightfeather/terms-of-service</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+</urlset>

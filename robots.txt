@@ -1,0 +1,10 @@
+# Grupo Pluma Histórias — robots
+User-agent: *
+Allow: /
+Disallow: /publisher/
+
+# Jobs/data internos do publisher
+Disallow: /publisher/jobs.json
+Disallow: /publisher/jobs_history.json
+
+Sitemap: https://www.plumanoturna.com.br/sitemap.xml
