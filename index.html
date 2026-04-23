@@ -171,9 +171,18 @@
             color: #fffdd0;
             margin-bottom: 0.6rem;
             letter-spacing: 0.02em;
-            padding-bottom: 0.35rem; border-bottom: 2px solid #F5B942; display: inline-block;
+            
         }
-        .tagline {
+                h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #F5B942;
+            margin: 0.35rem auto 0;
+            border-radius: 2px;
+        }
+.tagline {
             font-size: 1.05rem;
             font-weight: 400;
             color: #a8a4a0;

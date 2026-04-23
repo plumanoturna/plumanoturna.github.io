@@ -91,8 +91,17 @@
         }
         .lang-switch:hover { color: #F5B942; border-color: #F5B942; background: rgba(255,253,208,0.05); }
         .lang-switch svg { width: 14px; height: 14px; fill: currentColor; }
-        h1 { font-size: 1.8rem; font-weight: 700; color: #fffdd0; margin-bottom: 0.5rem; letter-spacing: 0.02em; padding-bottom: 0.35rem; border-bottom: 2px solid #F5B942; display: inline-block; }
-        .tagline { font-size: 1.05rem; font-weight: 400; color: #a8a4a0; margin-bottom: 1.8rem; line-height: 1.5; }
+        h1 { font-size: 1.8rem; font-weight: 700; color: #fffdd0; margin-bottom: 0.5rem; letter-spacing: 0.02em;  }
+                h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 2px;
+            background: #F5B942;
+            margin: 0.35rem auto 0;
+            border-radius: 2px;
+        }
+.tagline { font-size: 1.05rem; font-weight: 400; color: #a8a4a0; margin-bottom: 1.8rem; line-height: 1.5; }
         .watch-btn {
             display: inline-flex; align-items: center; gap: 0.5rem;
             background: #fffdd0; color: #0a0a14;
