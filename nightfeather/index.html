@@ -196,9 +196,12 @@
         .channels {
             margin: 0 0 2.5rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 1rem;
             text-align: left;
+        }
+        @media (min-width: 600px) {
+            .channels { grid-template-columns: 1fr 1fr; }
         }
         .channel-card {
             position: relative;
