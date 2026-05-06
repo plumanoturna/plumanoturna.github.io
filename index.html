@@ -235,6 +235,7 @@
             position: relative;
             display: flex;
             flex-direction: column;
+            min-width: 0;
             text-decoration: none;
             color: inherit;
             border-radius: 14px;
@@ -309,7 +310,7 @@
             background: #0a0a14;
             border: 2px solid var(--ch-color, #2a2540);
         }
-        .ch-text { flex: 1; min-width: 0; }
+        .ch-text { flex: 1; min-width: 0; overflow-wrap: anywhere; }
         .ch-theme {
             font-size: 0.7rem;
             font-weight: 700;
