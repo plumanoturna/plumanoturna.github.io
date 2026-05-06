@@ -186,41 +186,83 @@
             margin: 1.5rem 0 0.9rem;
             text-align: center;
         }
+        .trust-band {
+            display: flex; justify-content: center; flex-wrap: wrap;
+            gap: 0.5rem 1.4rem; margin: 0.4rem 0 1.5rem;
+            font-size: 0.72rem; font-weight: 700; color: #a8a4a0; letter-spacing: 0.02em;
+        }
+        .trust-band span { display: inline-flex; align-items: center; gap: 0.4rem; }
+        .trust-band svg { width: 14px; height: 14px; fill: #F5B942; flex-shrink: 0; }
         .channels {
             margin: 0 0 2.5rem;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 0.75rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
             text-align: left;
         }
         .channel-card {
+            position: relative;
             display: flex;
-            align-items: center;
-            gap: 0.85rem;
-            padding: 0.85rem 1rem;
-            border: 1px solid #3a3548;
-            border-radius: 10px;
+            flex-direction: column;
             text-decoration: none;
             color: inherit;
-            transition: all 0.3s;
-            background: rgba(255, 253, 208, 0.02);
+            border-radius: 14px;
+            overflow: hidden;
+            background: #14122a;
+            border: 1px solid #2a2540;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
         .channel-card:hover {
-            border-color: #F5B942; box-shadow: 0 4px 16px rgba(245,185,66,0.12);
-            background: rgba(255, 253, 208, 0.06);
-            transform: translateY(-1px);
+            transform: translateY(-3px);
+            border-color: var(--ch-color, #F5B942);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.45), 0 0 0 1px var(--ch-color, #F5B942) inset;
         }
-        .channel-card img {
-            width: 44px;
-            height: 44px;
-            border-radius: 8px;
-            object-fit: cover;
-            flex-shrink: 0;
+        .ch-thumb {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
             background: #0a0a14;
+            overflow: hidden;
         }
-        .channel-card .ch-text { flex: 1; min-width: 0; }
-        .channel-card .ch-name { font-size: 0.95rem; font-weight: 700; color: #fffdd0; margin-bottom: 0.2rem; }
-        .channel-card .ch-desc { font-size: 0.75rem; font-weight: 400; color: #a8a4a0; line-height: 1.4; }
+        .ch-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+        .channel-card:hover .ch-thumb img { transform: scale(1.04); }
+        .ch-thumb::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(20,18,42,0) 55%, rgba(20,18,42,0.85) 100%);
+        }
+        .ch-strip { position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--ch-color, #F5B942); z-index: 2; }
+        .ch-play {
+            position: absolute; inset: 0; margin: auto;
+            width: 56px; height: 56px; border-radius: 50%;
+            background: rgba(204, 0, 0, 0.95);
+            display: flex; align-items: center; justify-content: center;
+            opacity: 0; transition: opacity 0.25s ease; z-index: 2;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+        }
+        .channel-card:hover .ch-play { opacity: 1; }
+        .ch-play svg { width: 22px; height: 22px; fill: #fff; margin-left: 3px; }
+        .ch-body { display: flex; align-items: center; gap: 0.85rem; padding: 0.95rem 1rem 1rem; }
+        .ch-avatar {
+            width: 56px; height: 56px; border-radius: 50%;
+            object-fit: cover; flex-shrink: 0; background: #0a0a14;
+            border: 2px solid var(--ch-color, #2a2540);
+        }
+        .ch-text { flex: 1; min-width: 0; }
+        .ch-theme {
+            font-size: 0.7rem; font-weight: 700;
+            color: var(--ch-color, #F5B942);
+            text-transform: uppercase; letter-spacing: 0.1em;
+            margin-bottom: 0.2rem;
+        }
+        .ch-name { font-size: 1.05rem; font-weight: 700; color: #fffdd0; margin-bottom: 0.25rem; line-height: 1.15; }
+        .ch-meta { display: flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-weight: 400; color: #a8a4a0; }
+        .ch-meta svg { width: 18px; height: 13px; flex-shrink: 0; }
+        .channel-card.ch-noturna  { --ch-color: #8a7ad4; }
+        .channel-card.ch-sagrada  { --ch-color: #d4ad55; }
+        .channel-card.ch-abissal  { --ch-color: #4dbfb5; }
+        .channel-card.ch-estelar  { --ch-color: #b56de0; }
         .links {
             display: flex;
             gap: 0.8rem;
@@ -243,46 +285,12 @@
         }
         .links a:hover { border-color: #F5B942; background: rgba(255, 253, 208, 0.05); }
         .links a svg { width: 18px; height: 18px; fill: #fffdd0; flex-shrink: 0; }
-        .sponsor-label {
-            display: block;
-            font-size: 0.62rem;
-            font-weight: 700;
-            color: #555;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            margin-bottom: 0.4rem;
-        }
-        .publisher-link {
-            display: inline-block;
-            color: #a8a4a0;
-            text-decoration: none;
-            padding: 0.5rem 1.2rem;
-            border: 1px solid #3a3548;
-            border-radius: 20px;
-            font-size: 0.72rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            transition: all 0.3s;
-        }
-        .publisher-link:hover { color: #fffdd0; border-color: #F5B942; color: #F5B942; }
-        .partnerships { margin-top: 2rem; text-align: center; font-size: 0.85rem; }
-        .partnerships p { color: #777; margin-bottom: 0.4rem; font-weight: 700; }
-        .partnerships a { color: #fffdd0; text-decoration: none; font-weight: 700; }
-        .partnerships button {
-            background: transparent;
-            border: 1px solid #3a3548;
-            color: #a8a4a0;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.65rem;
-            cursor: pointer;
-            margin-left: 6px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        footer { margin-top: 3rem; font-size: 0.8rem; color: #555; font-weight: 700; }
+        footer { margin-top: 3rem; font-size: 0.8rem; color: #555; font-weight: 700; text-align: center; }
         footer a { color: #777; text-decoration: none; }
         footer a:hover { color: #aaa; }
+        .footer-sponsor { margin-top: 0.8rem; font-size: 0.65rem; letter-spacing: 0.05em; }
+        .footer-sponsor a { color: #555; text-decoration: none; }
+        .footer-sponsor a:hover { color: #777; }
     
         h2.channels-title, h2.section-title { margin-top: 1.5rem; }
         h3.ch-name, h3.oc-name { margin-top: 0; }
@@ -457,6 +465,53 @@
       gtag('config', 'G-68RJHPYYE5', { 'anonymize_ip': true });
     </script>
     <script>
+      // Populate channel card thumbnails from JSON-LD VideoObject (latest video per channel)
+      (function() {
+        function init() {
+          try {
+            var scripts = document.querySelectorAll('script[type="application/ld+json"]');
+            var latest = {};
+            scripts.forEach(function(s) {
+              try {
+                var data = JSON.parse(s.textContent);
+                var graph = data['@graph'] || (Array.isArray(data) ? data : [data]);
+                graph.forEach(function(item) {
+                  if (item['@type'] !== 'VideoObject') return;
+                  var author = (item.author && item.author.name) || '';
+                  var date = item.uploadDate || '';
+                  var thumb = item.thumbnailUrl || '';
+                  if (!author || !thumb) return;
+                  if (!latest[author] || date > latest[author].date) {
+                    latest[author] = { date: date, thumb: thumb };
+                  }
+                });
+              } catch (e) {}
+            });
+            document.querySelectorAll('.channel-card').forEach(function(card) {
+              var name = card.getAttribute('data-channel');
+              var img = card.querySelector('.ch-thumb img');
+              if (!img) return;
+              if (latest[name]) {
+                img.src = latest[name].thumb;
+              } else if (img.dataset.fallback) {
+                img.src = img.dataset.fallback;
+              }
+              img.onerror = function() {
+                if (img.dataset.fallback && img.src !== img.dataset.fallback) {
+                  img.src = img.dataset.fallback;
+                }
+              };
+            });
+          } catch (e) {}
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', init);
+        } else {
+          init();
+        }
+      })();
+    </script>
+    <script>
       // GA4 click tracking nomeado (inferido por classe/URL)
       document.addEventListener('click', function(e) {
         var a = e.target.closest('a');
@@ -498,34 +553,84 @@
         <h1>Feather Stories Group</h1>
         <p class="tagline">Stories narrated in English — to fall asleep, to discover, to travel.</p>
 
-        <h2 class="channels-title">Our 4 YouTube channels</h2>
+        <div class="trust-band" aria-label="Authenticity signals">
+            <span><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg>Official channels</span>
+            <span><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg>Narrated in English</span>
+            <span><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19l12-12-1.4-1.4z"/></svg>New videos every week</span>
+        </div>
+
+        <h2 class="channels-title">Choose your universe</h2>
         <div class="channels">
-            <a href="https://www.youtube.com/@nightfeathersleepstories" class="channel-card" aria-label="Night Feather — sleep stories" target="_blank" rel="noopener">
-                <img src="logo.png" alt="Night Feather logo" loading="lazy">
-                <div class="ch-text">
-                    <h3 class="ch-name">🌙 Night Feather</h3>
-                    <div class="ch-desc">Relaxing bedtime stories, narrated ASMR, sleep stories in English.</div>
+            <a href="https://www.youtube.com/@nightfeathersleepstories" class="channel-card ch-noturna" data-channel="Night Feather" aria-label="Night Feather on YouTube — sleep stories" target="_blank" rel="noopener">
+                <div class="ch-thumb">
+                    <span class="ch-strip"></span>
+                    <img alt="" loading="lazy" data-fallback="logo.png">
+                    <span class="ch-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                </div>
+                <div class="ch-body">
+                    <img class="ch-avatar" src="logo.png" alt="Night Feather avatar" loading="lazy">
+                    <div class="ch-text">
+                        <div class="ch-theme">Sleep stories</div>
+                        <div class="ch-name">Night Feather</div>
+                        <div class="ch-meta">
+                            <svg viewBox="0 0 24 17" aria-hidden="true"><path fill="#FF0000" d="M23.5 2.6a3 3 0 0 0-2.1-2.1C19.5 0 12 0 12 0S4.5 0 2.6.5A3 3 0 0 0 .5 2.6 31 31 0 0 0 0 8.5a31 31 0 0 0 .5 5.9 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.9 31 31 0 0 0-.5-5.9z"/><path fill="#fff" d="M9.6 12.1V4.9l6.3 3.6z"/></svg>
+                            Official YouTube channel
+                        </div>
+                    </div>
                 </div>
             </a>
-            <a href="https://www.youtube.com/@sacredfeathermysteries" class="channel-card" aria-label="Sacred Feather — Bible mysteries" target="_blank" rel="noopener">
-                <img src="/sacredfeather/logo.png" alt="Sacred Feather logo" loading="lazy">
-                <div class="ch-text">
-                    <h3 class="ch-name">📜 Sacred Feather</h3>
-                    <div class="ch-desc">Bible mysteries, forgotten biblical characters, faith investigations.</div>
+            <a href="https://www.youtube.com/@sacredfeathermysteries" class="channel-card ch-sagrada" data-channel="Sacred Feather" aria-label="Sacred Feather on YouTube — Bible mysteries" target="_blank" rel="noopener">
+                <div class="ch-thumb">
+                    <span class="ch-strip"></span>
+                    <img alt="" loading="lazy" data-fallback="/sacredfeather/logo.png">
+                    <span class="ch-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                </div>
+                <div class="ch-body">
+                    <img class="ch-avatar" src="/sacredfeather/logo.png" alt="Sacred Feather avatar" loading="lazy">
+                    <div class="ch-text">
+                        <div class="ch-theme">Bible mysteries</div>
+                        <div class="ch-name">Sacred Feather</div>
+                        <div class="ch-meta">
+                            <svg viewBox="0 0 24 17" aria-hidden="true"><path fill="#FF0000" d="M23.5 2.6a3 3 0 0 0-2.1-2.1C19.5 0 12 0 12 0S4.5 0 2.6.5A3 3 0 0 0 .5 2.6 31 31 0 0 0 0 8.5a31 31 0 0 0 .5 5.9 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.9 31 31 0 0 0-.5-5.9z"/><path fill="#fff" d="M9.6 12.1V4.9l6.3 3.6z"/></svg>
+                            Official YouTube channel
+                        </div>
+                    </div>
                 </div>
             </a>
-            <a href="https://www.youtube.com/@abyssalplume" class="channel-card" aria-label="Abyssal Plume — deep ocean mysteries" target="_blank" rel="noopener">
-                <img src="/abyssalplume/logo.png" alt="Abyssal Plume logo" loading="lazy">
-                <div class="ch-text">
-                    <h3 class="ch-name">🐋 Abyssal Plume</h3>
-                    <div class="ch-desc">Deep ocean mysteries, abyssal creatures, life in the unexplored depths.</div>
+            <a href="https://www.youtube.com/@abyssalplume" class="channel-card ch-abissal" data-channel="Abyssal Plume" aria-label="Abyssal Plume on YouTube — deep ocean mysteries" target="_blank" rel="noopener">
+                <div class="ch-thumb">
+                    <span class="ch-strip"></span>
+                    <img alt="" loading="lazy" data-fallback="/abyssalplume/logo.png">
+                    <span class="ch-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                </div>
+                <div class="ch-body">
+                    <img class="ch-avatar" src="/abyssalplume/logo.png" alt="Abyssal Plume avatar" loading="lazy">
+                    <div class="ch-text">
+                        <div class="ch-theme">Deep ocean</div>
+                        <div class="ch-name">Abyssal Plume</div>
+                        <div class="ch-meta">
+                            <svg viewBox="0 0 24 17" aria-hidden="true"><path fill="#FF0000" d="M23.5 2.6a3 3 0 0 0-2.1-2.1C19.5 0 12 0 12 0S4.5 0 2.6.5A3 3 0 0 0 .5 2.6 31 31 0 0 0 0 8.5a31 31 0 0 0 .5 5.9 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.9 31 31 0 0 0-.5-5.9z"/><path fill="#fff" d="M9.6 12.1V4.9l6.3 3.6z"/></svg>
+                            Official YouTube channel
+                        </div>
+                    </div>
                 </div>
             </a>
-            <a href="https://www.youtube.com/@stellarfeather" class="channel-card" aria-label="Stellar Feather — astronomy and space missions" target="_blank" rel="noopener">
-                <img src="/stellarfeather/logo.png" alt="Stellar Feather logo" loading="lazy">
-                <div class="ch-text">
-                    <h3 class="ch-name">🚀 Stellar Feather</h3>
-                    <div class="ch-desc">Astronomy, space missions, NASA, solar system, cosmic exploration.</div>
+            <a href="https://www.youtube.com/@stellarfeather" class="channel-card ch-estelar" data-channel="Stellar Feather" aria-label="Stellar Feather on YouTube — astronomy and space missions" target="_blank" rel="noopener">
+                <div class="ch-thumb">
+                    <span class="ch-strip"></span>
+                    <img alt="" loading="lazy" data-fallback="/stellarfeather/logo.png">
+                    <span class="ch-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+                </div>
+                <div class="ch-body">
+                    <img class="ch-avatar" src="/stellarfeather/logo.png" alt="Stellar Feather avatar" loading="lazy">
+                    <div class="ch-text">
+                        <div class="ch-theme">Cosmos & NASA</div>
+                        <div class="ch-name">Stellar Feather</div>
+                        <div class="ch-meta">
+                            <svg viewBox="0 0 24 17" aria-hidden="true"><path fill="#FF0000" d="M23.5 2.6a3 3 0 0 0-2.1-2.1C19.5 0 12 0 12 0S4.5 0 2.6.5A3 3 0 0 0 .5 2.6 31 31 0 0 0 0 8.5a31 31 0 0 0 .5 5.9 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.9 31 31 0 0 0-.5-5.9z"/><path fill="#fff" d="M9.6 12.1V4.9l6.3 3.6z"/></svg>
+                            Official YouTube channel
+                        </div>
+                    </div>
                 </div>
             </a>
         </div>
@@ -549,18 +654,14 @@
             </a>
         </div>
 
-        <span class="sponsor-label">Sponsor</span>
-        <a href="https://www.publisherplatform.com.br" class="publisher-link" target="_blank" rel="sponsored noopener">Publisher Platform</a>
-
-        <div class="partnerships">
-            <p>Business Partnerships</p>
-            <a href="https://mail.google.com/mail/?view=cm&to=plumanoturna@gmail.com&su=Business+Partnership+Pluma+Stories+Group">plumanoturna@gmail.com</a>
-            <button onclick="navigator.clipboard.writeText('plumanoturna@gmail.com');this.textContent='Copied!';var b=this;setTimeout(function(){b.textContent='Copy'},2000)">Copy</button>
-        </div>
     </div>
     <footer>
         <a href="/nightfeather/privacy-policy">Privacy Policy</a> &middot;
-        <a href="/nightfeather/terms-of-service">Terms of Service</a>
+        <a href="/nightfeather/terms-of-service">Terms of Service</a> &middot;
+        <a href="https://mail.google.com/mail/?view=cm&to=plumanoturna@gmail.com&su=Contact+Pluma+Stories+Group">Contact</a>
+        <div class="footer-sponsor">
+            <a href="https://www.publisherplatform.com.br" target="_blank" rel="sponsored noopener">Published with Publisher Platform</a>
+        </div>
     </footer>
 </body>
 </html>
