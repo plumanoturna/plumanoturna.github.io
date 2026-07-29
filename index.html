@@ -182,15 +182,15 @@
             fill: #F5B942;
             flex-shrink: 0;
         }
+        /* Coluna unica sempre. Com 3 canais um grid de 2 colunas deixa o
+           terceiro orfao embaixo; empilhado fica simetrico e cada episodio
+           ganha uma thumb grande, que e o que a pessoa quer clicar. */
         .channels {
             margin: 0 0 2.5rem;
             display: grid;
             grid-template-columns: 1fr;
-            gap: 1rem;
+            gap: 1.25rem;
             text-align: left;
-        }
-        @media (min-width: 600px) {
-            .channels { grid-template-columns: 1fr 1fr; }
         }
         .channel-card {
             position: relative;
@@ -303,6 +303,19 @@
         .channel-card.ch-sagrada  { --ch-color: #d4ad55; }
         .channel-card.ch-abissal  { --ch-color: #4dbfb5; }
         .channel-card.ch-estelar  { --ch-color: #b56de0; }
+        /* Em coluna unica o card fica ~2x mais largo que era no grid de 2
+           colunas. Os tamanhos internos foram desenhados pro card estreito e
+           ficavam perdidos nessa largura, entao escalam junto. */
+        @media (min-width: 600px) {
+            .ch-body   { gap: 1.1rem; padding: 1.2rem 1.35rem 1.35rem; }
+            .ch-avatar { width: 64px; height: 64px; }
+            .ch-theme  { font-size: 0.78rem; margin-bottom: 0.3rem; }
+            .ch-name   { font-size: 1.45rem; margin-bottom: 0.4rem; }
+            .ch-meta   { font-size: 0.82rem; }
+            .ch-meta svg { width: 21px; height: 15px; }
+            .ch-play   { width: 66px; height: 66px; }
+            .ch-play svg { width: 26px; height: 26px; }
+        }
         .links {
             display: flex;
             gap: 0.8rem;
