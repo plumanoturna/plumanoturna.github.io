@@ -71,6 +71,30 @@ def resolve_channel_id(handle: str) -> str:
     raise ValueError(f"channelId nao encontrado para {handle}")
 
 
+def best_thumbnail(vid: str, fallback: str) -> str:
+    """Maior thumb que o video realmente tiver.
+
+    O RSS entrega `hqdefault.jpg`, que e 480x360 em 4:3 — com o card em 16/9 e
+    object-fit: cover sobram uns 480x270 uteis. Isso bastava quando o card tinha
+    ~330px, mas os cards empilhados tem 680px, entao virava ampliacao (2.8x em
+    tela retina) e a imagem ficava borrada.
+
+    `maxresdefault` e 1280x720 nativo 16:9 e existe sempre que a thumb foi subida
+    em HD — que e o caso de tudo que sai do publisher. Mesmo assim testamos antes
+    de gravar: video antigo ou sem thumb custom devolve 404 aqui.
+    """
+    for nome in ("maxresdefault", "sddefault"):
+        url = f"https://i.ytimg.com/vi/{vid}/{nome}.jpg"
+        try:
+            req = urllib.request.Request(url, headers={"User-Agent": UA}, method="HEAD")
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                if resp.status == 200:
+                    return url
+        except Exception:
+            continue
+    return fallback
+
+
 def fetch_videos(feed_url: str, limit: int) -> list[dict]:
     """Le um feed de videos do YouTube. Serve tanto pra `channel_id=` quanto pra
     `playlist_id=` — os dois tem o mesmo formato Atom."""
@@ -93,6 +117,7 @@ def fetch_videos(feed_url: str, limit: int) -> list[dict]:
                 description = d.text.strip()[:280]
         if not vid:
             continue
+        thumb = best_thumbnail(vid, thumb)
         out.append({
             "@type": "VideoObject",
             "@id": f"https://www.youtube.com/watch?v={vid}",
