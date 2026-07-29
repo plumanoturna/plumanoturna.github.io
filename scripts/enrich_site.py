@@ -15,18 +15,29 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 CHANNELS = {
-    "pt": {
-        "plumanoturna":  "@plumanoturna",
-        "plumasagrada":  "@plumasagrada",
-        "plumaabissal":  "@plumaabissal",
-        "plumaestelar":  "@plumaestelar",
-    },
     "en": {
         "nightfeather":  "@nightfeathersleepstories",
         "sacredfeather": "@sacredfeathermysteries",
         "abyssalplume":  "@abyssalplume",
         "stellarfeather":"@stellarfeather",
     },
+}
+
+# PT usa o feed da PLAYLIST de long-form, nao o do canal.
+#
+# O feed do canal (videos.xml?channel_id=) mistura shorts, e como eles saem em
+# volume maior ocupam sempre o topo — a thumb do card no site acabava sendo a de
+# um short em vez do episodio. Estes sao os ids das playlists "video_long" que o
+# publisher alimenta sozinho a cada episodio (channels/{slug}.yaml, campo
+# platforms.youtube.defaults.playlists.video_long), entao so tem long-form ali.
+# Ao adicionar canal novo, pegar o id de la.
+#
+# O feed de playlist traz author, thumbnail e description iguais aos do feed de
+# canal, entao o resto do script e o JS do site nao precisaram mudar.
+PLAYLISTS_LONGFORM = {
+    "plumasagrada": "PL0KgwMAr-M3WFjbfiXc3UAuAV8erc7KRo",
+    "plumaabissal": "PLMRfHsuvj3DusHB82Jp7GIFQ1iRS7T3rd",
+    "plumaestelar": "PLsW-azZ7uKyQea3Lf-cLk3cD4O1_AHRsm",
 }
 
 VIDEOS_PER_CHANNEL = 2
@@ -60,9 +71,10 @@ def resolve_channel_id(handle: str) -> str:
     raise ValueError(f"channelId nao encontrado para {handle}")
 
 
-def fetch_videos(channel_id: str, limit: int) -> list[dict]:
-    url = f"https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}"
-    root = ET.fromstring(http_get(url))
+def fetch_videos(feed_url: str, limit: int) -> list[dict]:
+    """Le um feed de videos do YouTube. Serve tanto pra `channel_id=` quanto pra
+    `playlist_id=` — os dois tem o mesmo formato Atom."""
+    root = ET.fromstring(http_get(feed_url))
     out = []
     for entry in root.findall("atom:entry", NS)[:limit]:
         vid = entry.findtext("yt:videoId", default="", namespaces=NS)
@@ -99,14 +111,28 @@ def fetch_videos(channel_id: str, limit: int) -> list[dict]:
 
 def build_schema_graph(locale: str) -> dict | None:
     videos: list[dict] = []
-    for slug, handle in CHANNELS[locale].items():
-        try:
-            cid = resolve_channel_id(handle)
-            vids = fetch_videos(cid, VIDEOS_PER_CHANNEL)
-            print(f"  [{locale}] {handle} -> {cid}: {len(vids)} videos")
-            videos.extend(vids)
-        except Exception as e:
-            print(f"  [{locale}] WARN {handle}: {e}", file=sys.stderr)
+
+    if locale == "pt":
+        # Playlists de long-form — ver nota em PLAYLISTS_LONGFORM.
+        for slug, playlist_id in PLAYLISTS_LONGFORM.items():
+            try:
+                url = f"https://www.youtube.com/feeds/videos.xml?playlist_id={playlist_id}"
+                vids = fetch_videos(url, VIDEOS_PER_CHANNEL)
+                print(f"  [pt] {slug} (playlist long-form): {len(vids)} videos")
+                videos.extend(vids)
+            except Exception as e:
+                print(f"  [pt] WARN {slug}: {e}", file=sys.stderr)
+    else:
+        for slug, handle in CHANNELS[locale].items():
+            try:
+                cid = resolve_channel_id(handle)
+                url = f"https://www.youtube.com/feeds/videos.xml?channel_id={cid}"
+                vids = fetch_videos(url, VIDEOS_PER_CHANNEL)
+                print(f"  [{locale}] {handle} -> {cid}: {len(vids)} videos")
+                videos.extend(vids)
+            except Exception as e:
+                print(f"  [{locale}] WARN {handle}: {e}", file=sys.stderr)
+
     if not videos:
         return None
     return {"@context": "https://schema.org", "@graph": videos}

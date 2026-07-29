@@ -12,7 +12,6 @@
     <meta name="author" content="Pluma Abissal">
     <link rel="canonical" href="https://www.plumanoturna.com.br/plumaabissal/">
     <link rel="alternate" hreflang="pt-BR" href="https://www.plumanoturna.com.br/plumaabissal/">
-    <link rel="alternate" hreflang="en" href="https://www.plumanoturna.com.br/abyssalplume/">
     <link rel="alternate" hreflang="x-default" href="https://www.plumanoturna.com.br/">
 
     <meta property="og:type" content="website">
@@ -84,17 +83,6 @@
         }
         .container { max-width: 680px; text-align: center; }
         .logo { width: 220px; max-width: 60vw; height: auto; margin-bottom: 1rem; border-radius: 16px; }
-        .lang-switch {
-            position: fixed; top: 1.2rem; right: 1.5rem;
-            display: flex; align-items: center; gap: 0.5rem;
-            color: #777; text-decoration: none;
-            font-size: 0.75rem; font-weight: 700;
-            letter-spacing: 0.05em; text-transform: uppercase;
-            border: 1px solid #3a3548; border-radius: 20px;
-            padding: 0.4rem 0.9rem; transition: all 0.3s;
-        }
-        .lang-switch:hover { color: #F5B942; border-color: #F5B942; background: rgba(255,253,208,0.05); }
-        .lang-switch svg { width: 14px; height: 14px; fill: currentColor; }
         h1 { font-size: 1.8rem; font-weight: 700; color: #fffdd0; margin-bottom: 0.5rem; letter-spacing: 0.02em;  }
                 h1::after {
             content: '';
@@ -158,9 +146,6 @@
           evt = 'click_publisher';
         } else if (a.classList.contains('back-group')) {
           evt = 'click_back_group';
-        } else if (a.classList.contains('lang-switch')) {
-          evt = 'click_lang_switch';
-          label = a.getAttribute('href');
         } else if (/instagram\.com/.test(url))      { evt = 'click_social'; label = 'instagram'; }
         else if (/tiktok\.com/.test(url))           { evt = 'click_social'; label = 'tiktok'; }
         else if (/pinterest\.com/.test(url))        { evt = 'click_social'; label = 'pinterest'; }
@@ -174,10 +159,6 @@
     </script>
 </head>
 <body>
-    <a href="/abyssalplume/" class="lang-switch">
-        <svg viewBox="0 0 24 24"><path d="M12.87 15.07l-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"/></svg>
-        English version
-    </a>
     <div class="container">
         <img src="logo.png" alt="Logo Pluma Abissal" class="logo">
         <h1>🐋 Pluma Abissal</h1>
@@ -189,13 +170,6 @@
 
         <h2 class="section-title">Outros canais do grupo</h2>
         <div class="others">
-            <a href="/" class="other-card">
-                <img src="/logo.png" alt="Logo Pluma Noturna" loading="lazy">
-                <div class="oc-text">
-                    <h3 class="oc-name">🌙 Pluma Noturna</h3>
-                    <div class="oc-desc">Histórias para dormir</div>
-                </div>
-            </a>
             <a href="/plumasagrada/" class="other-card">
                 <img src="/plumasagrada/logo.png" alt="Logo Pluma Sagrada" loading="lazy">
                 <div class="oc-text">
@@ -212,7 +186,7 @@
             </a>
         </div>
 
-        <a href="https://www.plumanoturna.com.br/" class="back-group">Ver todos os 4 canais do Grupo Pluma Histórias</a>
+        <a href="https://www.plumanoturna.com.br/" class="back-group">Ver os 3 canais do Grupo Pluma Histórias</a>
     </div>
     <footer>
         <a href="/privacy-policy">Política de Privacidade</a> &middot;
