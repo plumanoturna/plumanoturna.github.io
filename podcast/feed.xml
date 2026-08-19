@@ -7,12 +7,12 @@
     <description>O podcast oficial do Grupo Pluma Histórias. Histórias relaxantes para dormir, investigações bíblicas, mistérios do oceano profundo e viagens pelo cosmos — tudo narrado com cuidado, em episódios que transformam seus momentos de silêncio em pequenas expedições. Novos episódios toda semana, de múltiplos canais do grupo.</description>
     <language>pt-BR</language>
     <link>https://www.plumanoturna.com.br</link>
-    <managingEditor>grupoplumahistorias@gmail.com (Grupo Pluma Histórias)</managingEditor>
+    <managingEditor>plumadocumentarios@gmail.com (Grupo Pluma Histórias)</managingEditor>
     <atom:link href="https://www.plumanoturna.com.br/podcast/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>Grupo Pluma Histórias</itunes:author>
     <itunes:owner>
       <itunes:name>Grupo Pluma Histórias</itunes:name>
-      <itunes:email>grupoplumahistorias@gmail.com</itunes:email>
+      <itunes:email>plumadocumentarios@gmail.com</itunes:email>
     </itunes:owner>
     <itunes:image href="https://www.plumanoturna.com.br/podcast-covers/plumaestelar.jpg"/>
     <itunes:category text="Fiction">
